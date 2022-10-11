@@ -28,4 +28,27 @@
            </form>
         </field>
     </record>
+    
+    	<record id="res_users_view_estate" model="ir.ui.view">
+    		<field name="name">res.users.view.form.inherit.estate</field>
+    		<field name="model">res.users</field>
+    		<field name="inherit_id" ref="base.view_users_form"/>
+    		<field name="access_rights" position="after">
+    			<page string="Estate Properties" name="user.estate.properties">
+    				<field name="property_ids">
+    					<group name="user_properties">
+    					    <field name="name"/>
+    					    <field name= "property_type_it"/>
+    					    <field name= "postcode"/>
+    					    <field name="property_tag_ids" widget="many2many_tags"/>
+    					    <field name="bedrooms"/>
+    					    <field name="living_area"/>
+    					    <field name="expected_price"/>
+    					    <field name="selling_price"/>
+    					</group>
+    				</field>
+    			</page>
+    		</field>
+    	</record>
+
 </odoo>
