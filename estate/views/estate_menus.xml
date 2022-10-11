@@ -5,7 +5,8 @@
             <menuitem id="Add_a_new_entry" action="estate_model_action"/>
         </menuitem>
         <menuitem id="Estate_Type_Menu" name="Settings">
-            <menuitem id="Add_a_new_entry" action="estate_type_action"/>
+            <menuitem id="Add_a_new_type" action="estate_type_action"/>
+            <menuitem id="Add_a_new_tag" action="estate_tag_action"/>
         </menuitem>
     </menuitem> 
 </odoo>
