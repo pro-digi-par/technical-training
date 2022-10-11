@@ -39,6 +39,7 @@
                    <field name="expected_price"/>
                    <field name="date_availability"/>
                    <field name="selling_price"/>
+                   <field name="State"/>
                </group>
                <notebook>
                    <page string ="Description">
