@@ -26,6 +26,7 @@ class TestModel(models.Model):
                            required=True,
                            copy=False,
                            default='new')
+    property_type_it = fields.Many2One("estate_property_type", string="Property Type")
     
 
 class EstatePropertyTypeModel(models.Model):
