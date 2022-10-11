@@ -24,7 +24,6 @@
                 <field name="price"/>
                 <field name="status"/>
                 <field name="partner_id"/>
-                <field name="property_id"/>
                </group>
            </form>
         </field>
