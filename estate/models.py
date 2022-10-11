@@ -29,7 +29,7 @@ class TestModel(models.Model):
     property_type_it = fields.Many2one("estate_property_type", string="Property Type")
     salesman_id = fields.Many2one("res.users", string = "Salesman", default=lambda self: self.env.user)
     buyer_id = fields.Many2one("res.partner", string = "Buyer")
-    offer_ids = fields.One2many("estate.property.offer")
+    offer_ids = fields.One2many("estate.property.offer", "property_id")
     
 
 class EstatePropertyTypeModel(models.Model):
