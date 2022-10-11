@@ -1,7 +1,7 @@
 from odoo import models, api, fields
 
 class ModifyingUserModel(models.Model):
-    _name = "estate_user_modification"
+    _name = "res.user"
     _description = "Modification to user model for estate app"
     _inherit = "res.user"
     
