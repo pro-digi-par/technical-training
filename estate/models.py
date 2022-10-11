@@ -46,6 +46,12 @@ class EstatePropertyOffer(models.Model):
                            copy=False)
     partner_id = fields.Many2one("res.partner", required = True)
     property_id = fields.Many2one("estate_property", required = True)
+    
+    @api.model
+    def create(self, vals):
+        #
+        self.env["estate_property"].browse(vals.get("property_id")).State = "Offer_Received"
+        return super().create(vals)
  
 class EstatePropertyTypeTag(models.Model):
     _name = "estate_property_tag"
