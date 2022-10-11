@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record id="test_model_action" model="ir.actions.act_window">
+    <record id="estate_model_action" model="ir.actions.act_window">
         <field name="name">Add new record</field>
         <field name="res_model">estate_property</field>
         <field name="view_mode">tree,form</field>
