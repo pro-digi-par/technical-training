@@ -1,9 +1,5 @@
 from odoo import models, fields
 
-
-"""import pdb
-pdb.set_trace()"""
-
 class TestModel(models.Model):
     _name = "estate_property"
     _description = "My Estate property description"
