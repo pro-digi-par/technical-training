@@ -4,6 +4,7 @@
     "application": True,  # This line says the module is an App, and not a module
     "depends": ["base"],  # dependencies
     "data": ['security/ir.model.access.csv',
+    	     'models/inherited_model.py',
              'views/estate_property_views.xml',
              'views/estate_type_views.xml',
              'views/estate_tags_views.xml',
