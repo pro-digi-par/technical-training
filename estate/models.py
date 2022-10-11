@@ -34,5 +34,5 @@ class TestModel(models.Model):
 class EstatePropertyTypeModel(models.Model):
     _name = "estate_property_type"
     _description = "Demo property type"
-    name = fields.Chart(required = True)
+    name = fields.Char(required = True)
  
