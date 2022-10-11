@@ -27,5 +27,9 @@ class TestModel(models.Model):
                            copy=False,
                            default='new')
     
-    
+
+class EstatePropertyTypeModel(models.Model):
+    _name = "estate_property_type"
+    _description = "Demo property type"
+    name = fields.Chart(required = True)
  
