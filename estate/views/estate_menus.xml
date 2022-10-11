@@ -4,5 +4,8 @@
         <menuitem id="test_first_level_menu" name="Advertisments">
             <menuitem id="Add_a_new_entry" action="estate_model_action"/>
         </menuitem>
+        <menuitem id="Estate_Type_Menu" name="Settings">
+            <menuitem id="Add_a_new_entry" action="estate_type_action"/>
+        </menuitem>
     </menuitem> 
 </odoo>
