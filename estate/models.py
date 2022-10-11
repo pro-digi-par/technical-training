@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, api, fields
 
 class TestModel(models.Model):
     _name = "estate_property"
@@ -30,7 +30,11 @@ class TestModel(models.Model):
     salesman_id = fields.Many2one("res.users", string = "Salesman") # default=lambda self: self.env.user
     buyer_id = fields.Many2one("res.partner", string = "Buyer")
     property_tag_ids = fields.Many2many("estate_property_tag", string="Property Tag")
-    
+
+    total_area = fields.Float(compute="_compute_total")
+    @api.depends("living_area", "garden_area")
+    def _compute_total(self):
+        sel._cr.total = self._cr.living_area + self._cr.garden_area    
 
 class EstatePropertyTypeModel(models.Model):
     _name = "estate_property_type"
