@@ -29,10 +29,20 @@ class TestModel(models.Model):
     property_type_it = fields.Many2one("estate_property_type", string="Property Type")
     salesman_id = fields.Many2one("res.users", string = "Salesman", default=lambda self: self.env.user)
     buyer_id = fields.Many2one("res.partner", string = "Buyer")
+    offer_ids = fields.One2many("estate.property.offer")
     
 
 class EstatePropertyTypeModel(models.Model):
     _name = "estate_property_type"
     _description = "Demo property type"
     name = fields.Char(required = True)
- 
+    
+class EstatePropertyOffer(models.Model):
+    _name = "estate_property_offer"
+    _description = "Offer on an object"
+    price = fields.Float()
+    status = fields.Selection(string='Status',
+                          selection=[('accepted','Accepted'),('refused','Refused')],
+                           copy=False)
+    partner_id = fields.Many2one("res.partner", required = True)
+    property_id = fields.Many2one("estate.property", required = True)
