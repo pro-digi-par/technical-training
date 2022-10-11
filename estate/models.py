@@ -30,8 +30,8 @@ class TestModel(models.Model):
     salesman_id = fields.Many2one("res.users", string = "Salesman", default=lambda self: self.env.user)
     buyer_id = fields.Many2one("res.partner", string = "Buyer")
     offer_ids = fields.One2many("estate.property.offer", "property_id")
+    property_tag_ids = fields.Many2many("estate_property_tag", string="Property Tag")
     
-
 class EstatePropertyTypeModel(models.Model):
     _name = "estate_property_type"
     _description = "Demo property type"
@@ -46,3 +46,8 @@ class EstatePropertyOffer(models.Model):
                            copy=False)
     partner_id = fields.Many2one("res.partner", required = True)
     property_id = fields.Many2one("estate_property", required = True)
+ 
+class EstatePropertyTypeTag(models.Model):
+    _name = "estate_property_tag"
+    _description = "Demo property tags"
+    name = fields.Char(required = True)
