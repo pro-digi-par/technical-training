@@ -34,6 +34,7 @@
                 </h1>  
                   <field name="property_tag_ids" widget="many2many_tags"/>
                <group>
+                   <field name= "property_type_it"/>
                    <field name= "postcode"/>
                    <field name="expected_price"/>
                    <field name="date_availability"/>
