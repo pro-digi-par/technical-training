@@ -29,6 +29,7 @@ class TestModel(models.Model):
     property_type_it = fields.Many2one("estate_property_type", string="Property Type")
     salesman_id = fields.Many2one("res.users", string = "Salesman", default=lambda self: self.env.user)
     buyer_id = fields.Many2one("res.partner", string = "Buyer")
+    offer_ids = fields.One2many("estate.property.offer", "property_id")
     property_tag_ids = fields.Many2many("estate_property_tag", string="Property Tag")
 
     total_area = fields.Float(compute="_compute_total")
@@ -41,6 +42,22 @@ class EstatePropertyTypeModel(models.Model):
     _name = "estate_property_type"
     _description = "Demo property type"
     name = fields.Char(required = True)
+    
+class EstatePropertyOffer(models.Model):
+    _name = "estate.property.offer"
+    _description = "Offer on an object"
+    price = fields.Float()
+    status = fields.Selection(string='Status',
+                          selection=[('accepted','Accepted'),('refused','Refused')],
+                           copy=False)
+    partner_id = fields.Many2one("res.partner", required = True)
+    property_id = fields.Many2one("estate_property", required = True)
+    
+    @api.model
+    def create(self, vals):
+        #
+        self.env["estate_property"].browse(vals.get("property_id")).State = "Offer_Received"
+        return super().create(vals)
  
 class EstatePropertyTypeTag(models.Model):
     _name = "estate_property_tag"
