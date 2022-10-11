@@ -6,6 +6,7 @@
         <field name="model">res.users</field>
         <field name="inherit_id" ref="base.view_users_form"/>
         <field name="access_rights" position="after">
+        	<page string="Estate Properties" name="user.estate.properties">
 		<field name="property_ids">
             		<group name="user_properties">
 	                    <field name="name"/>
@@ -18,7 +19,7 @@
 	                    <field name="selling_price"/>
    			</group>
             	</field>
-            </group>
+            	</page>
         </field>
     </record>
 
