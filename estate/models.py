@@ -29,6 +29,7 @@ class TestModel(models.Model):
     property_type_it = fields.Many2one("estate_property_type", string="Property Type")
     salesman_id = fields.Many2one("res.users", string = "Salesman", default=lambda self: self.env.user)
     buyer_id = fields.Many2one("res.partner", string = "Buyer")
+    property_tag_ids = fields.Many2many("estate_property_tag", string="Property Tag")
     
 
 class EstatePropertyTypeModel(models.Model):
@@ -36,3 +37,7 @@ class EstatePropertyTypeModel(models.Model):
     _description = "Demo property type"
     name = fields.Char(required = True)
  
+class EstatePropertyTypeTag(models.Model):
+    _name = "estate_property_tag"
+    _description = "Demo property tags"
+    name = fields.Char(required = True)
