@@ -34,7 +34,7 @@ class TestModel(models.Model):
     total_area = fields.Float(compute="_compute_total")
     @api.depends("living_area", "garden_area")
     def _compute_total(self):
-        sel._cr.total = living_area + garden_area    
+        total = living_area + garden_area    
 
 class EstatePropertyTypeModel(models.Model):
     _name = "estate_property_type"
